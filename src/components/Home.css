@@ -337,7 +337,7 @@
       font-family: var(--font-primary);
       font-size: 16px;
       font-weight: 400;
-      color: rgba(255, 255, 255, 0.6);
+      color: #fff;
       white-space: nowrap;
       transition: 0.3s;
     }
@@ -805,7 +805,7 @@
   # Call To Action Section
   --------------------------------------------------------------*/
   .call-to-action {
-    background: linear-gradient(rgba(14, 29, 52, 0.6), rgba(14, 29, 52, 0.8)), url("Y:\Aum Prasad Casting\website\aum_prasad_casting\src\assets\cta-bg.jpg") center center;
+    background: linear-gradient(rgba(14, 29, 52, 0.6), rgba(14, 29, 52, 0.8)), url("/src/assets/cta-bg.jpg") center center;
     background-size: cover;
     padding: 100px 0;
   }
@@ -1070,7 +1070,7 @@
   --------------------------------------------------------------*/
   .testimonials {
     padding: 80px 0;
-    background: url("Y:\Aum Prasad Casting\website\aum_prasad_casting\src\assets\testimonials-bg.jpg") no-repeat;
+    background: url("/src/assets/testimonials-bg.jpg") no-repeat;
     background-position: center center;
     background-size: cover;
     position: relative;
@@ -1705,7 +1705,7 @@
     width: 100%;
     min-height: 50vh;
     background-color: var(--color-secondary);
-    background-image: url("Y:\Aum Prasad Casting\website\aum_prasad_casting\src\assets\hero-bg.png");
+    background-image: url("/src/assets/home-bg.jpg");
     background-size: cover;
     background-position: center;
     position: relative;

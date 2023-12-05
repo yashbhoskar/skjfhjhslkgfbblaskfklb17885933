@@ -4,8 +4,11 @@ import { useEffect } from 'react';
 
 import GLightbox from 'glightbox';
 import PureCounter from '@srexi/purecounterjs';
-import Swiper from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper';
+
 import AOS from 'aos';
+import Carousel from 'react-bootstrap/Carousel';
+import Card from 'react-bootstrap/Card';
 
 import APCLogo from '../assets/APC_Logo.jpg';
 import about from '../assets/about.jpg';
@@ -16,15 +19,14 @@ import trucking from '../assets/trucking-service.jpg';
 import packaging from '../assets/packaging-service.jpg';
 import warehouse from '../assets/warehousing-service.jpg';
 import heroImg from '../assets/7378847_32104-removebg.png';
-import feature1 from '../assets/features-1.jpg';
-import feature2 from '../assets/features-2.jpg';
-import feature3 from '../assets/features-3.jpg';
-import feature4 from '../assets/features-4.jpg';
 import testimonials1 from '../assets/testimonials/testimonials-1.jpg';
 import testimonials2 from '../assets/testimonials/testimonials-2.jpg';
 import testimonials3 from '../assets/testimonials/testimonials-3.jpg';
 import testimonials4 from '../assets/testimonials/testimonials-4.jpg';
 import testimonials5 from '../assets/testimonials/testimonials-5.jpg';
+
+import { FaArrowUp } from '@react-icons/all-files/fa/FaArrowUp';
+import { Link } from 'react-router-dom';
 import Headers from './Headers';
 import About from './About';
 import Footer from './Footer';
@@ -185,7 +187,8 @@ export default function Home() {
           <div className="row gy-4 d-flex justify-content-between">
             <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
               <h2 data-aos="fade-up">Your Quote/Motivation Goes Here......</h2>
-              <p data-aos="fade-up" data-aos-delay="100">Sub Title goes here...... </p>
+              <p data-aos="fade-up" data-aos-delay="100">Aluminium Gravity Die casting Foundry with <br />
+                special focus to cater to the requirements of Automotive , <br /> Non Automotive segment, Electrical Industry and the Export market.</p>
 
               {/* <form action="#" className="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
                 <input type="text" className="form-control" placeholder="ZIP code or CitY" />
@@ -226,7 +229,7 @@ export default function Home() {
             </div>
 
             <div className="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-              <img src={heroImg} className="img-fluid mb-3 mb-lg-0" alt="" />
+              {/* <img src={heroImg} className="img-fluid mb-3 mb-lg-0" alt="" /> */}
             </div>
 
           </div>
@@ -401,14 +404,14 @@ export default function Home() {
             <div className="row justify-content-center">
               <div className="col-lg-8 text-center">
                 <h3>Call To Action</h3>
-                <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <a className="cta-btn" href="#">Call To Action</a>
+                {/* <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> */}
+                <a className="cta-btn" href="https://business.whatsapp.com/">Call To Action</a>
               </div>
             </div>
 
           </div>
         </section>
-        <section id="testimonials" className="testimonials">
+        {/* <section id="testimonials" className="testimonials">
           <div className="container">
 
             <div className="slides-1 swiper" data-aos="fade-up">
@@ -499,11 +502,89 @@ export default function Home() {
             </div>
 
           </div>
+        </section> */}
+        <section className="testimonials">
+          <Carousel className="row text-center" indicators={false} touch={true} >
+            <Carousel.Item interval={1000} className="col-md-4 mb-5 mb-md-0 testimonial-item">
+              <div className="d-flex justify-content-center mb-4">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+                  className="rounded-circle shadow-1-strong" width="150" height="150" />
+              </div>
+              <h5 className="mb-3">Maria Smantha</h5>
+              <h6 className="text-primary mb-3">Web Developer</h6>
+              <p className="px-xl-3">
+                <i className="fas fa-quote-left pe-2"></i>Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic
+                tenetur.
+              </p>
+              {/* <div className="row justify-content-center">
+                <Card className='col-md-4 m-3' style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src="holder.js/100px180" />
+                  <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Text>
+                      Some quick example text to build on the card title and make up the
+                      bulk of the card's content.
+                    </Card.Text>
+                    <Button variant="primary">Go somewhere</Button>
+                  </Card.Body>
+                </Card>
+
+                <Card className='col-md-4 m-3' style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src="holder.js/100px180" />
+                  <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Text>
+                      Some quick example text to build on the card title and make up the
+                      bulk of the card's content.
+                    </Card.Text>
+                    <Button variant="primary">Go somewhere</Button>
+                  </Card.Body>
+                </Card>
+
+                <Card className='col-md-4 m-3' style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src="holder.js/100px180" />
+                  <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Text>
+                      Some quick example text to build on the card title and make up the
+                      bulk of the card's content.
+                    </Card.Text>
+                    <Button variant="primary">Go somewhere</Button>
+                  </Card.Body>
+                </Card>
+              </div> */}
+            </Carousel.Item>
+            <Carousel.Item interval={1000} className="col-md-4 mb-5 mb-md-0 testimonial-item">
+              <div className="d-flex justify-content-center mb-4">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
+                  className="rounded-circle shadow-1-strong" width="150" height="150" />
+              </div>
+              <h5 className="mb-3">Lisa Cudrow</h5>
+              <h6 className="text-primary mb-3">Graphic Designer</h6>
+              <p className="px-xl-3">
+                <i className="fas fa-quote-left pe-2"></i>Ut enim ad minima veniam, quis nostrum
+                exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi.
+              </p>
+            </Carousel.Item>
+            <Carousel.Item className="col-md-4 mb-0 testimonial-item">
+              <div className="d-flex justify-content-center mb-4">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
+                  className="rounded-circle shadow-1-strong" width="150" height="150" />
+              </div>
+              <h5 className="mb-3">John Smith</h5>
+              <h6 className="text-primary mb-3">Marketing Specialist</h6>
+              <p className="px-xl-3">
+                <i className="fas fa-quote-left pe-2"></i>At vero eos et accusamus et iusto odio
+                dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
+              </p>
+            </Carousel.Item>
+          </Carousel>
         </section>
       </main>
       <Footer />
 
-      <a href="#" className="scroll-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short"></i></a>
+      <Link to="/" className="scroll-top d-flex align-items-center justify-content-center"><FaArrowUp /></Link>
     </div>
   )
 }

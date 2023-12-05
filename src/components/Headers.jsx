@@ -18,7 +18,7 @@ export default function Headers() {
       <header id="header" className="header d-flex align-items-center fixed-top">
         <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-          <Link to="index.html" className="logo d-flex align-items-center">
+          <Link to="/" className="logo d-flex align-items-center">
 
             <img src={APCLogo} alt="" />
             <h1>Aum Prasad Casting</h1>
@@ -37,29 +37,27 @@ export default function Headers() {
               <li>
                 <Link to="/contact">Contact</Link>
               </li>
+              {/* <li>
+                <Link to="/enterprises">Enterprises</Link>
+              </li> */}
               {/* <li><a href="" className="active">Home</a></li>
               <li><a href="">About</a></li>
               <li><a href="">Services</a></li> */}
               {/* <li><a href="">Pricing</a></li> */}
-              <li className="dropdown"><a href="#"><span>Drop Down</span> <i className="bi bi-chevron-down dropdown-indicator"></i></a>
+              <li className="dropdown">
+                <Link href="#">
+                  <span>Enterprises</span> 
+                  <i className="bi bi-chevron-down dropdown-indicator"></i>
+                </Link>
                 <ul>
-                  <li><a href="#">Drop Down 1</a></li>
-                  <li className="dropdown"><a href="#"><span>Deep Drop Down</span> <i className="bi bi-chevron-down dropdown-indicator"></i></a>
-                    <ul>
-                      <li><a href="#">Deep Drop Down 1</a></li>
-                      <li><a href="#">Deep Drop Down 2</a></li>
-                      <li><a href="#">Deep Drop Down 3</a></li>
-                      <li><a href="#">Deep Drop Down 4</a></li>
-                      <li><a href="#">Deep Drop Down 5</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Drop Down 2</a></li>
-                  <li><a href="#">Drop Down 3</a></li>
-                  <li><a href="#">Drop Down 4</a></li>
+                  <li><Link to="/">Company 1</Link></li>
+                  <li><Link to="/">Company 2</Link></li>
+                  {/* <li><Link to="/">Company 3</Link></li>
+                  <li><Link to="/">Company 4</Link></li> */}
                 </ul>
               </li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a className="get-a-quote" href="get-a-quote.html">Get a Quote</a></li>
+              {/* <li><a href="contact.html">Contact</a></li> */}
+              <li><a className="get-a-quote" href="https://business.whatsapp.com/">Get a Quote</a></li>
             </ul>
           </nav>
         </div>
