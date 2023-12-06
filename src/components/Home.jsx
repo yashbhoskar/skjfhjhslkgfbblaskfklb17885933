@@ -7,8 +7,7 @@ import PureCounter from '@srexi/purecounterjs';
 import { Swiper, SwiperSlide } from 'swiper';
 
 import AOS from 'aos';
-import Carousel from 'react-bootstrap/Carousel';
-import Card from 'react-bootstrap/Card';
+import { Button, Card, Carousel } from 'react-bootstrap';
 
 import APCLogo from '../assets/APC_Logo.jpg';
 import about from '../assets/about.jpg';
@@ -19,11 +18,12 @@ import trucking from '../assets/trucking-service.jpg';
 import packaging from '../assets/packaging-service.jpg';
 import warehouse from '../assets/warehousing-service.jpg';
 import heroImg from '../assets/7378847_32104-removebg.png';
-import testimonials1 from '../assets/testimonials/testimonials-1.jpg';
-import testimonials2 from '../assets/testimonials/testimonials-2.jpg';
-import testimonials3 from '../assets/testimonials/testimonials-3.jpg';
-import testimonials4 from '../assets/testimonials/testimonials-4.jpg';
-import testimonials5 from '../assets/testimonials/testimonials-5.jpg';
+import mahindra from '../assets/mahindra.png';
+import tataAutoComp from '../assets/tataAutoComp.jpg';
+import force from '../assets/force.png';
+import forbMarshall from '../assets/forbes-marshall-logo.jpg';
+import elpro from '../assets/elpro.jpg';
+
 
 import { FaArrowUp } from '@react-icons/all-files/fa/FaArrowUp';
 import { Link } from 'react-router-dom';
@@ -288,28 +288,28 @@ export default function Home() {
               <div className="col-lg-6 content order-last  order-lg-first">
                 <h3>About Us</h3>
                 <p>
-                  Dolor iure expedita id fuga asperiores qui sunt consequatur minima. Quidem voluptas deleniti. Sit quia molestiae quia quas qui magnam itaque veritatis dolores. Corrupti totam ut eius incidunt reiciendis veritatis asperiores placeat.
+                  AUM PRASAD CASTING PVT LTD., has been promoted by Two technocrats, both Engineers with more than Fifteen years experience to their credit  in Die designing, Die manufacturing, Aluminium Sand castings and Gravity die castings.
                 </p>
                 <ul>
                   <li data-aos="fade-up" data-aos-delay="100">
                     <i className="bi bi-diagram-3"></i>
                     <div>
                       <h5>Ullamco laboris nisi ut aliquip consequat</h5>
-                      <p>Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade</p>
+                      <p>We can supply castings with minimum  50 gms weight upto 70 kgs weight. We specialize delivery as per the customer requirements, with consistent quality and firm dispatch schedules.</p>
                     </div>
                   </li>
                   <li data-aos="fade-up" data-aos-delay="200">
                     <i className="bi bi-fullscreen-exit"></i>
                     <div>
                       <h5>Magnam soluta odio exercitationem reprehenderi</h5>
-                      <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna pasata redi</p>
+                      <p>We can supply castings with minimum  50 gms weight upto 70 kgs weight. We specialize delivery as per the customer requirements, with consistent quality and firm dispatch schedules.</p>
                     </div>
                   </li>
                   <li data-aos="fade-up" data-aos-delay="300">
                     <i className="bi bi-broadcast"></i>
                     <div>
                       <h5>Voluptatem et qui exercitationem</h5>
-                      <p>Et velit et eos maiores est tempora et quos dolorem autem tempora incidunt maxime veniam</p>
+                      <p>We can supply castings with minimum  50 gms weight upto 70 kgs weight. We specialize delivery as per the customer requirements, with consistent quality and firm dispatch schedules.</p>
                     </div>
                   </li>
                 </ul>
@@ -506,7 +506,7 @@ export default function Home() {
         <section className="testimonials">
           <Carousel className="row text-center" indicators={false} touch={true} >
             <Carousel.Item interval={1000} className="col-md-4 mb-5 mb-md-0 testimonial-item">
-              <div className="d-flex justify-content-center mb-4">
+              {/* <div className="d-flex justify-content-center mb-4">
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
                   className="rounded-circle shadow-1-strong" width="150" height="150" />
               </div>
@@ -516,68 +516,122 @@ export default function Home() {
                 <i className="fas fa-quote-left pe-2"></i>Lorem ipsum dolor sit amet, consectetur
                 adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic
                 tenetur.
-              </p>
-              {/* <div className="row justify-content-center">
-                <Card className='col-md-4 m-3' style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src="holder.js/100px180" />
+              </p> */}
+              <div className="row justify-content-center">
+                <Card className='col-md-4 m-4' style={{ width: '18rem', backgroundImage: 'transperant' }}>
+                  <Card.Img className='card-img' variant="top" src={mahindra} />
                   <Card.Body>
                     <Card.Title>Card Title</Card.Title>
                     <Card.Text>
                       Some quick example text to build on the card title and make up the
                       bulk of the card's content.
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    {/* <Button variant="primary">Go somewhere</Button> */}
                   </Card.Body>
                 </Card>
 
-                <Card className='col-md-4 m-3' style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src="holder.js/100px180" />
+                <Card className='col-md-4 m-4' style={{ width: '18rem' }}>
+                  <Card.Img className='card-img' variant="top" src={forbMarshall} />
                   <Card.Body>
                     <Card.Title>Card Title</Card.Title>
                     <Card.Text>
                       Some quick example text to build on the card title and make up the
                       bulk of the card's content.
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    {/* <Button variant="primary">Go somewhere</Button> */}
                   </Card.Body>
                 </Card>
 
-                <Card className='col-md-4 m-3' style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src="holder.js/100px180" />
+                <Card className='col-md-4 m-4' style={{ width: '18rem' }}>
+                  <Card.Img className='card-img' variant="top" src={force} />
                   <Card.Body>
                     <Card.Title>Card Title</Card.Title>
                     <Card.Text>
                       Some quick example text to build on the card title and make up the
                       bulk of the card's content.
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    {/* <Button variant="primary">Go somewhere</Button> */}
                   </Card.Body>
                 </Card>
-              </div> */}
+              </div>
             </Carousel.Item>
             <Carousel.Item interval={1000} className="col-md-4 mb-5 mb-md-0 testimonial-item">
-              <div className="d-flex justify-content-center mb-4">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
-                  className="rounded-circle shadow-1-strong" width="150" height="150" />
+            <div className="row justify-content-center">
+              <Card className='col-md-4 m-4' style={{ width: '18rem', backgroundImage: 'transperant' }}>
+                <Card.Img className='card-img' variant="top" src={mahindra} />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  {/* <Button variant="primary">Go somewhere</Button> */}
+                </Card.Body>
+              </Card>
+
+              <Card className='col-md-4 m-4' style={{ width: '18rem' }}>
+                <Card.Img className='card-img' variant="top" src={forbMarshall} />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  {/* <Button variant="primary">Go somewhere</Button> */}
+                </Card.Body>
+              </Card>
+
+              <Card className='col-md-4 m-4' style={{ width: '18rem' }}>
+                <Card.Img className='card-img' variant="top" src={force} />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  {/* <Button variant="primary">Go somewhere</Button> */}
+                </Card.Body>
+              </Card>
               </div>
-              <h5 className="mb-3">Lisa Cudrow</h5>
-              <h6 className="text-primary mb-3">Graphic Designer</h6>
-              <p className="px-xl-3">
-                <i className="fas fa-quote-left pe-2"></i>Ut enim ad minima veniam, quis nostrum
-                exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi.
-              </p>
             </Carousel.Item>
             <Carousel.Item className="col-md-4 mb-0 testimonial-item">
-              <div className="d-flex justify-content-center mb-4">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
-                  className="rounded-circle shadow-1-strong" width="150" height="150" />
+            <div className="row justify-content-center">
+              <Card className='col-md-4 m-4' style={{ width: '18rem', backgroundImage: 'transperant' }}>
+                <Card.Img className='card-img' variant="top" src={mahindra} />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  {/* <Button variant="primary">Go somewhere</Button> */}
+                </Card.Body>
+              </Card>
+
+              <Card className='col-md-4 m-4' style={{ width: '18rem' }}>
+                <Card.Img className='card-img' variant="top" src={forbMarshall} />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  {/* <Button variant="primary">Go somewhere</Button> */}
+                </Card.Body>
+              </Card>
+
+              <Card className='col-md-4 m-4' style={{ width: '18rem' }}>
+                <Card.Img className='card-img' variant="top" src={force} />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  {/* <Button variant="primary">Go somewhere</Button> */}
+                </Card.Body>
+              </Card>
               </div>
-              <h5 className="mb-3">John Smith</h5>
-              <h6 className="text-primary mb-3">Marketing Specialist</h6>
-              <p className="px-xl-3">
-                <i className="fas fa-quote-left pe-2"></i>At vero eos et accusamus et iusto odio
-                dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
-              </p>
             </Carousel.Item>
           </Carousel>
         </section>

@@ -1,9 +1,162 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Headers from './Headers';
 import Footer from './Footer';
 import './Home.css'
+import GLightbox from 'glightbox';
+import PureCounter from '@srexi/purecounterjs';
+import { Swiper, SwiperSlide } from 'swiper';
+
+import AOS from 'aos';
+import { Link } from 'react-router-dom';
+
+import about from '../assets/about.jpg';
+import team_1 from '../assets/team/team-1.jpg'
 
 export default function About() {
+
+  useEffect(() => {
+    "use strict";
+
+    const preloader = document.querySelector('#preloader');
+    if (preloader) {
+      window.addEventListener('load', () => {
+        preloader.remove();
+      });
+    }
+
+    /**
+     * Sticky header on scroll
+     */
+    const selectHeader = document.querySelector('#header');
+    if (selectHeader) {
+      document.addEventListener('scroll', () => {
+        window.scrollY > 100 ? selectHeader.classList.add('sticked') : selectHeader.classList.remove('sticked');
+      });
+    }
+
+    /**
+     * Scroll top button
+     */
+    const scrollTop = document.querySelector('.scroll-top');
+    if (scrollTop) {
+      const togglescrollTop = function () {
+        window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+      }
+      window.addEventListener('load', togglescrollTop);
+      document.addEventListener('scroll', togglescrollTop);
+      scrollTop.addEventListener('click', window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      }));
+    }
+
+    /**
+     * Mobile nav toggle
+     */
+    const mobileNavShow = document.querySelector('.mobile-nav-show');
+    const mobileNavHide = document.querySelector('.mobile-nav-hide');
+
+    document.querySelectorAll('.mobile-nav-toggle').forEach(el => {
+      el.addEventListener('click', function (event) {
+        event.preventDefault();
+        mobileNavToogle();
+      })
+    });
+
+    function mobileNavToogle() {
+      document.querySelector('body').classList.toggle('mobile-nav-active');
+      mobileNavShow.classList.toggle('d-none');
+      mobileNavHide.classList.toggle('d-none');
+    }
+
+    /**
+     * Hide mobile nav on same-page/hash links
+     */
+    document.querySelectorAll('#navbar a').forEach(navbarlink => {
+
+      if (!navbarlink.hash) return;
+
+      let section = document.querySelector(navbarlink.hash);
+      if (!section) return;
+
+      navbarlink.addEventListener('click', () => {
+        if (document.querySelector('.mobile-nav-active')) {
+          mobileNavToogle();
+        }
+      });
+
+    });
+
+    /**
+     * Toggle mobile nav dropdowns
+     */
+    const navDropdowns = document.querySelectorAll('.navbar .dropdown > a');
+
+    navDropdowns.forEach(el => {
+      el.addEventListener('click', function (event) {
+        if (document.querySelector('.mobile-nav-active')) {
+          event.preventDefault();
+          this.classList.toggle('active');
+          this.nextElementSibling.classList.toggle('dropdown-active');
+
+          let dropDownIndicator = this.querySelector('.dropdown-indicator');
+          dropDownIndicator.classList.toggle('bi-chevron-up');
+          dropDownIndicator.classList.toggle('bi-chevron-down');
+        }
+      })
+    });
+
+    /**
+     * Initiate pURE cOUNTER
+     */
+    new PureCounter();
+
+    /**
+     * Initiate glightbox
+     */
+    const glightbox = GLightbox({
+      selector: '.glightbox'
+    });
+
+    /**
+     * Init swiper slider with 1 slide at once in desktop view
+     */
+    new Swiper('.slides-1', {
+      speed: 600,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      slidesPerView: 'auto',
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
+
+    /**
+     * Animation on scroll function and init
+     */
+    function aos_init() {
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+    }
+    window.addEventListener('load', () => {
+      aos_init();
+    });
+
+  }, []);
+
   return (
     <div>
       <Headers />
@@ -21,7 +174,7 @@ export default function About() {
           <nav>
             <div className="container">
               <ol>
-                <li><a href="index.html">Home</a></li>
+                <li><Link to="/home">Home</Link></li>
                 <li>About</li>
               </ol>
             </div>
@@ -34,7 +187,7 @@ export default function About() {
 
             <div className="row gy-4">
               <div className="col-lg-6 position-relative align-self-start order-lg-last order-first">
-                <img src="assets/img/about.jpg" className="img-fluid" alt="" />
+                <img src={about} className="img-fluid" alt="" />
                 <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" className="glightbox play-btn"></a>
               </div>
               <div className="col-lg-6 content order-last  order-lg-first">
@@ -113,6 +266,41 @@ export default function About() {
           <div className="container" data-aos="fade-up">
 
             <div className="section-header">
+              <span>Leadership</span>
+              <h2>Leadership</h2>
+
+            </div>
+
+            <div className="row" data-aos="fade-up" data-aos-delay="100">
+              <div className="col-lg-12">
+                <div className="member">
+                  <img src={team_1} className="img-fluid" alt="" />
+                  <div className="member-content">
+                    <h4>Walter White</h4>
+                    <span>Casting</span>
+                    <p>
+                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima id, voluptatum odio dignissimos ab adipisci culpa eius iusto suscipit omnis aperiam inventore consequuntur, possimus eum ducimus maxime ut nisi neque!
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident eos neque, nisi dolor aliquam tempora nam aliquid dolores impedit modi optio necessitatibus sit mollitia quo exercitationem recusandae eaque animi. Tempora!
+                    </p>
+                    <div className="social">
+                      <a href=""><i className="bi bi-twitter"></i></a>
+                      <a href=""><i className="bi bi-facebook"></i></a>
+                      <a href=""><i className="bi bi-instagram"></i></a>
+                      <a href=""><i className="bi bi-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="team" className="team pt-0">
+          <div className="container" data-aos="fade-up">
+
+            <div className="section-header">
               <span>Our Team</span>
               <h2>Our Team</h2>
 
@@ -181,188 +369,6 @@ export default function About() {
 
           </div>
         </section>
-        <section id="testimonials" className="testimonials">
-          <div className="container">
-
-            <div className="slides-1 swiper" data-aos="fade-up">
-              <div className="swiper-wrapper">
-
-                <div className="swiper-slide">
-                  <div className="testimonial-item">
-                    <img src="assets/img/testimonials/testimonials-1.jpg" className="testimonial-img" alt="" />
-                    <h3>Saul Goodman</h3>
-                    <h4>Ceo &amp; Founder</h4>
-                    <div className="stars">
-                      <i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i>
-                    </div>
-                    <p>
-                      <i className="bi bi-quote quote-icon-left"></i>
-                      Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                      <i className="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="swiper-slide">
-                  <div className="testimonial-item">
-                    <img src="assets/img/testimonials/testimonials-2.jpg" className="testimonial-img" alt="" />
-                    <h3>Sara Wilsson</h3>
-                    <h4>Designer</h4>
-                    <div className="stars">
-                      <i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i>
-                    </div>
-                    <p>
-                      <i className="bi bi-quote quote-icon-left"></i>
-                      Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                      <i className="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="swiper-slide">
-                  <div className="testimonial-item">
-                    <img src="assets/img/testimonials/testimonials-3.jpg" className="testimonial-img" alt="" />
-                    <h3>Jena Karlis</h3>
-                    <h4>Store Owner</h4>
-                    <div className="stars">
-                      <i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i>
-                    </div>
-                    <p>
-                      <i className="bi bi-quote quote-icon-left"></i>
-                      Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                      <i className="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="swiper-slide">
-                  <div className="testimonial-item">
-                    <img src="assets/img/testimonials/testimonials-4.jpg" className="testimonial-img" alt="" />
-                    <h3>Matt Brandon</h3>
-                    <h4>Freelancer</h4>
-                    <div className="stars">
-                      <i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i>
-                    </div>
-                    <p>
-                      <i className="bi bi-quote quote-icon-left"></i>
-                      Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                      <i className="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="swiper-slide">
-                  <div className="testimonial-item">
-                    <img src="assets/img/testimonials/testimonials-5.jpg" className="testimonial-img" alt="" />
-                    <h3>John Larson</h3>
-                    <h4>Entrepreneur</h4>
-                    <div className="stars">
-                      <i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i>
-                    </div>
-                    <p>
-                      <i className="bi bi-quote quote-icon-left"></i>
-                      Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                      <i className="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-              <div className="swiper-pagination"></div>
-            </div>
-
-          </div>
-        </section>
-
-        {/* <section id="faq" className="faq">
-          <div className="container" data-aos="fade-up">
-
-            <div className="section-header">
-              <span>Frequently Asked Questions</span>
-              <h2>Frequently Asked Questions</h2>
-
-            </div>
-
-            <div className="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
-              <div className="col-lg-10">
-
-                <div className="accordion accordion-flush" id="faqlist">
-
-                  <div className="accordion-item">
-                    <h3 className="accordion-header">
-                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
-                        <i className="bi bi-question-circle question-icon"></i>
-                        Non consectetur a erat nam at lectus urna duis?
-                      </button>
-                    </h3>
-                    <div id="faq-content-1" className="accordion-collapse collapse" data-bs-parent="#faqlist">
-                      <div className="accordion-body">
-                        Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-item">
-                    <h3 className="accordion-header">
-                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
-                        <i className="bi bi-question-circle question-icon"></i>
-                        Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?
-                      </button>
-                    </h3>
-                    <div id="faq-content-2" className="accordion-collapse collapse" data-bs-parent="#faqlist">
-                      <div className="accordion-body">
-                        Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                      </div>
-                    </div>
-                  </div>
-                  <div className="accordion-item">
-                    <h3 className="accordion-header">
-                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
-                        <i className="bi bi-question-circle question-icon"></i>
-                        Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?
-                      </button>
-                    </h3>
-                    <div id="faq-content-3" className="accordion-collapse collapse" data-bs-parent="#faqlist">
-                      <div className="accordion-body">
-                        Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="accordion-item">
-                    <h3 className="accordion-header">
-                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-4">
-                        <i className="bi bi-question-circle question-icon"></i>
-                        Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
-                      </button>
-                    </h3>
-                    <div id="faq-content-4" className="accordion-collapse collapse" data-bs-parent="#faqlist">
-                      <div className="accordion-body">
-                        <i className="bi bi-question-circle question-icon"></i>
-                        Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="accordion-item">
-                    <h3 className="accordion-header">
-                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-5">
-                        <i className="bi bi-question-circle question-icon"></i>
-                        Tempus quam pellentesque nec nam aliquam sem et tortor consequat?
-                      </button>
-                    </h3>
-                    <div id="faq-content-5" className="accordion-collapse collapse" data-bs-parent="#faqlist">
-                      <div className="accordion-body">
-                        Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-        </section> */}
         <Footer />
     </div>
   )

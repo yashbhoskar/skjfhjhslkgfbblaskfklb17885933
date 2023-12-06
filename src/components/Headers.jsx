@@ -21,7 +21,6 @@ export default function Headers() {
           <Link to="/" className="logo d-flex align-items-center">
 
             <img src={APCLogo} alt="" />
-            <h1>Aum Prasad Casting</h1>
           </Link>
 
           <button className="btn btn-sm mobile-nav-toggle mobile-nav-show bi bi-list">btn </button>
@@ -37,9 +36,9 @@ export default function Headers() {
               <li>
                 <Link to="/contact">Contact</Link>
               </li>
-              {/* <li>
-                <Link to="/enterprises">Enterprises</Link>
-              </li> */}
+              <li>
+                <Link to="/careers">Careers</Link>
+              </li>
               {/* <li><a href="" className="active">Home</a></li>
               <li><a href="">About</a></li>
               <li><a href="">Services</a></li> */}
