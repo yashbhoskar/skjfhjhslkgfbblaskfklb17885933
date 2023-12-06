@@ -17,6 +17,8 @@ export default function About() {
   useEffect(() => {
     "use strict";
 
+    
+
     const preloader = document.querySelector('#preloader');
     if (preloader) {
       window.addEventListener('load', () => {
@@ -55,6 +57,8 @@ export default function About() {
      */
     const mobileNavShow = document.querySelector('.mobile-nav-show');
     const mobileNavHide = document.querySelector('.mobile-nav-hide');
+    // mobileNavHide.classList.toggle('d-none');
+
 
     document.querySelectorAll('.mobile-nav-toggle').forEach(el => {
       el.addEventListener('click', function (event) {

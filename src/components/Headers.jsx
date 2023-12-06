@@ -175,8 +175,9 @@ export default function Headers() {
             <img src={APCLogo} alt="" />
           </Link>
 
-          <a> <IoListOutline className="mobile-nav-toggle mobile-nav-show" style={{ cursor: "pointer" }}> </IoListOutline> </a>
-          <a> <IoIosClose className=" mobile-nav-toggle mobile-nav-hide d-none" style={{ cursor: "pointer" }}> </IoIosClose> </a>
+           <IoListOutline className="mobile-nav-toggle mobile-nav-show" style={{ cursor: "pointer" }}> </IoListOutline>
+          {/* <Button variant="info" className="mobile-nav-toggle mobile-nav-show" size='lg' > </Button> */}
+         <IoIosClose className=" mobile-nav-toggle mobile-nav-hide d-none" style={{ cursor: "pointer" }}> </IoIosClose>
           
           <nav id="navbar" className="navbar">
             <ul>
