@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import GLightbox from 'glightbox';
 import PureCounter from '@srexi/purecounterjs';
 import { Swiper, SwiperSlide } from 'swiper';
-
 import AOS from 'aos';
 import { Button, Card, Carousel } from 'react-bootstrap';
 

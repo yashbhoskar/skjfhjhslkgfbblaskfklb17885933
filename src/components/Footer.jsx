@@ -5,6 +5,7 @@ import { GrLinkedin } from '@react-icons/all-files/gr/GrLinkedin';
 import { RiYoutubeFill } from '@react-icons/all-files/ri/RiYoutubeFill';
 import { FaWhatsapp } from '@react-icons/all-files/fa/FaWhatsapp';
 
+
 const Footer = () => {
     return (
         <div>

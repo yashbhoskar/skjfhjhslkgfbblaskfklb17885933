@@ -3,10 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import GLightbox from 'glightbox';
-import PureCounter from '@srexi/purecounterjs';
-import Swiper from 'swiper';
-import AOS from 'aos';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
