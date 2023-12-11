@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import Headers from './Headers';
+import Footer from './Footer';
 
 const Careers = () => {
   return (
@@ -33,7 +35,7 @@ const Careers = () => {
           <div className="container" data-aos="fade-up">
 
             <div>
-              <iframe style={{ border: "0", width: "100%", height: "340px" }} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15121.216254599964!2d73.8333203!3d18.6503466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b80ef4ebafdd%3A0x9987bf3d1f2dc6ac!2sAum%20Prasad%20Casting!5e0!3m2!1sen!2sin!4v1701765773888!5m2!1sen!2sin" frameborder="0" allowfullscreen></iframe>
+              <iframe style={{ border: "0", width: "100%", height: "340px" }} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15121.216254599964!2d73.8333203!3d18.6503466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b80ef4ebafdd%3A0x9987bf3d1f2dc6ac!2sAum%20Prasad%20Casting!5e0!3m2!1sen!2sin!4v1701765773888!5m2!1sen!2sin" frameBorder="0" allowFullScreen></iframe>
             </div>
 
             <div className="row gy-4 mt-4">

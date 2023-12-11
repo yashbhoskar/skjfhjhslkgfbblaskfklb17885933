@@ -7,8 +7,6 @@ import PureCounter from '@srexi/purecounterjs';
 import { Swiper, SwiperSlide } from 'swiper';
 import AOS from 'aos';
 import { Button, Card, Carousel } from 'react-bootstrap';
-
-import APCLogo from '../assets/APC_Logo.jpg';
 import about from '../assets/about.jpg';
 import storage from '../assets/storage-service.jpg';
 import logistics from '../assets/logistics-service.jpg';
@@ -22,6 +20,7 @@ import tataAutoComp from '../assets/tataAutoComp.jpg';
 import force from '../assets/force.png';
 import forbMarshall from '../assets/forbes-marshall-logo.jpg';
 import elpro from '../assets/elpro.jpg';
+import cropimg from '../assets/cropimg.jpg'
 
 
 import { FaArrowUp } from '@react-icons/all-files/fa/FaArrowUp';
@@ -29,6 +28,7 @@ import { Link } from 'react-router-dom';
 import Headers from './Headers';
 import About from './About';
 import Footer from './Footer';
+// import Carousel from 'react-bootstrap/Carousel';`
 
 // import companyDomainDetails from './Constants/constants';
 
@@ -181,18 +181,13 @@ export default function Home() {
   return (
     <div>
       <Headers />
-      <section id="hero" className="hero d-flex align-items-center">
+      {/* <section id="hero" className="hero d-flex align-items-center">
         <div className="container">
           <div className="row gy-4 d-flex justify-content-between">
             <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
               <h2 data-aos="fade-up">Your Quote/Motivation Goes Here......</h2>
               <p data-aos="fade-up" data-aos-delay="100">Aluminium Gravity Die casting Foundry with <br />
                 special focus to cater to the requirements of Automotive , <br /> Non Automotive segment, Electrical Industry and the Export market.</p>
-
-              {/* <form action="#" className="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
-                <input type="text" className="form-control" placeholder="ZIP code or CitY" />
-                <button type="submit" className="btn btn-primary">Search</button>
-              </form> */}
 
               <div className="row gy-4" data-aos="fade-up" data-aos-delay="400">
 
@@ -228,16 +223,41 @@ export default function Home() {
             </div>
 
             <div className="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-              {/* <img src={heroImg} className="img-fluid mb-3 mb-lg-0" alt="" /> */}
             </div>
 
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <Carousel indicators={false} id="hero" className=" d-flex align-items-center">
+        <Carousel.Item interval={2000}>
+          <img className="d-block w-100" src={cropimg} alt="Image One" />
+          <Carousel.Caption className="text-left">
+            <h3 data-aos="fade-up" >First slide label</h3>
+            <p data-aos="fade-up" data-aos-delay="100">Aluminium Gravity Die casting Foundry with special focus to cater to the requirements of Automotive, Non Automotive segment, Electrical Industry.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        < Carousel.Item interval={200000}>
+          <img className="d-block w-100" src={cropimg} alt="Image two" />
+          <Carousel.Caption className="text-left">
+            <h3 data-aos="fade-up" >Second slide label</h3>
+            <p data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        < Carousel.Item interval={2000}>
+          <img className="d-block w-100" src={cropimg} alt="Image three" />
+          <Carousel.Caption className="text-left">
+            <h3 data-aos="fade-up" >Third slide label</h3>
+            <p data-aos="fade-up" data-aos-delay="100">
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
 
       <main id="main">
 
-        <section id="featured-services" className="featured-services">
+        {/* <section id="featured-services" className="featured-services">
           <div className="container">
 
             <div className="row gy-4">
@@ -273,41 +293,71 @@ export default function Home() {
             </div>
 
           </div>
-        </section>
+        </section> */}
 
 
         <section id="about" className="about pt-0">
           <div className="container" data-aos="fade-up">
+            <div className="row section-header">
+              <span>About Us</span>
+              <h2>About Us</h2>
+            </div>
+            <div className="row gy-4" data-aos="fade-up" data-aos-delay="400">
 
+              <div className="col-lg-3 col-6">
+                <div className="stats-item text-center w-100 h-100">
+                  <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" className="purecounter"></span>
+                  <p>Clients</p>
+                </div>
+              </div>
+
+              <div className="col-lg-3 col-6">
+                <div className="stats-item text-center w-100 h-100">
+                  <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" className="purecounter"></span>
+                  <p>Employees</p>
+                </div>
+              </div>
+
+              <div className="col-lg-3 col-6">
+                <div className="stats-item text-center w-100 h-100">
+                  <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" className="purecounter"></span>
+                  <p>Components</p>
+                </div>
+              </div>
+
+              <div className="col-lg-3 col-6">
+                <div className="stats-item text-center w-100 h-100">
+                  <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" className="purecounter"></span>
+                  <p>Support</p>
+                </div>
+              </div>
+
+            </div>
             <div className="row gy-4">
-              <div className="col-lg-6 position-relative align-self-start order-lg-last order-first">
+              <div className="col-lg-4 position-relative align-self-start order-lg-last order-first">
                 <img src={about} className="img-fluid" alt="" />
                 <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" className="glightbox play-btn"></a>
               </div>
-              <div className="col-lg-6 content order-last  order-lg-first">
-                <h3>About Us</h3>
-                <p>
-                  AUM PRASAD CASTING PVT LTD., has been promoted by Two technocrats, both Engineers with more than Fifteen years experience to their credit  in Die designing, Die manufacturing, Aluminium Sand castings and Gravity die castings.
-                </p>
+              <div className="col-lg-8 content order-last  order-lg-first">
                 <ul>
                   <li data-aos="fade-up" data-aos-delay="100">
                     <i className="bi bi-diagram-3"></i>
                     <div>
-                      <h5>Ullamco laboris nisi ut aliquip consequat</h5>
-                      <p>We can supply castings with minimum  50 gms weight upto 70 kgs weight. We specialize delivery as per the customer requirements, with consistent quality and firm dispatch schedules.</p>
+                      <h5>Heading</h5>
+                      <p>AUM PRASAD CASTING PVT LTD., is Aluminium Gravity Die casting Foundry with special focus to cater to the requirements of Automotive  , Non Automotive segment, Electrical Industry and the Export market.</p>
                     </div>
                   </li>
                   <li data-aos="fade-up" data-aos-delay="200">
                     <i className="bi bi-fullscreen-exit"></i>
                     <div>
-                      <h5>Magnam soluta odio exercitationem reprehenderi</h5>
-                      <p>We can supply castings with minimum  50 gms weight upto 70 kgs weight. We specialize delivery as per the customer requirements, with consistent quality and firm dispatch schedules.</p>
+                      <h5>Heading</h5>
+                      <p>AUM PRASAD CASTING PVT LTD., has been promoted by Two technocrats, both Engineers with more than Fifteen years experience to their credit  in Die designing, Die manufacturing, Aluminium Sand castings and Gravity die castings.</p>
                     </div>
                   </li>
                   <li data-aos="fade-up" data-aos-delay="300">
                     <i className="bi bi-broadcast"></i>
                     <div>
-                      <h5>Voluptatem et qui exercitationem</h5>
+                      <h5>Heading</h5>
                       <p>We can supply castings with minimum  50 gms weight upto 70 kgs weight. We specialize delivery as per the customer requirements, with consistent quality and firm dispatch schedules.</p>
                     </div>
                   </li>
@@ -517,7 +567,7 @@ export default function Home() {
                 tenetur.
               </p> */}
               <div className="row justify-content-center">
-                <Card className='col-md-4 m-4' style={{ width: '18rem', backgroundImage: 'transperant' }}>
+                <Card className='col-md-4 m-4 testomonials-card' >
                   <Card.Img className='card-img' variant="top" src={mahindra} />
                   <Card.Body>
                     <Card.Title>Card Title</Card.Title>
@@ -529,7 +579,7 @@ export default function Home() {
                   </Card.Body>
                 </Card>
 
-                <Card className='col-md-4 m-4' style={{ width: '18rem' }}>
+                <Card className='col-md-4 m-4 testomonials-card'>
                   <Card.Img className='card-img' variant="top" src={forbMarshall} />
                   <Card.Body>
                     <Card.Title>Card Title</Card.Title>
@@ -541,7 +591,7 @@ export default function Home() {
                   </Card.Body>
                 </Card>
 
-                <Card className='col-md-4 m-4' style={{ width: '18rem' }}>
+                <Card className='col-md-4 m-4 testomonials-card'>
                   <Card.Img className='card-img' variant="top" src={force} />
                   <Card.Body>
                     <Card.Title>Card Title</Card.Title>
@@ -555,81 +605,81 @@ export default function Home() {
               </div>
             </Carousel.Item>
             <Carousel.Item interval={1000} className="col-md-4 mb-5 mb-md-0 testimonial-item">
-            <div className="row justify-content-center">
-              <Card className='col-md-4 m-4' style={{ width: '18rem', backgroundImage: 'transperant' }}>
-                <Card.Img className='card-img' variant="top" src={mahindra} />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                  </Card.Text>
-                  {/* <Button variant="primary">Go somewhere</Button> */}
-                </Card.Body>
-              </Card>
+              <div className="row justify-content-center">
+                <Card className='col-md-4 m-4 testomonials-card' >
+                  <Card.Img className='card-img' variant="top" src={mahindra} />
+                  <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Text>
+                      Some quick example text to build on the card title and make up the
+                      bulk of the card's content.
+                    </Card.Text>
+                    {/* <Button variant="primary">Go somewhere</Button> */}
+                  </Card.Body>
+                </Card>
 
-              <Card className='col-md-4 m-4' style={{ width: '18rem' }}>
-                <Card.Img className='card-img' variant="top" src={forbMarshall} />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                  </Card.Text>
-                  {/* <Button variant="primary">Go somewhere</Button> */}
-                </Card.Body>
-              </Card>
+                <Card className='col-md-4 m-4 testomonials-card'>
+                  <Card.Img className='card-img' variant="top" src={forbMarshall} />
+                  <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Text>
+                      Some quick example text to build on the card title and make up the
+                      bulk of the card's content.
+                    </Card.Text>
+                    {/* <Button variant="primary">Go somewhere</Button> */}
+                  </Card.Body>
+                </Card>
 
-              <Card className='col-md-4 m-4' style={{ width: '18rem' }}>
-                <Card.Img className='card-img' variant="top" src={force} />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                  </Card.Text>
-                  {/* <Button variant="primary">Go somewhere</Button> */}
-                </Card.Body>
-              </Card>
+                <Card className='col-md-4 m-4 testomonials-card'>
+                  <Card.Img className='card-img' variant="top" src={force} />
+                  <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Text>
+                      Some quick example text to build on the card title and make up the
+                      bulk of the card's content.
+                    </Card.Text>
+                    {/* <Button variant="primary">Go somewhere</Button> */}
+                  </Card.Body>
+                </Card>
               </div>
             </Carousel.Item>
             <Carousel.Item className="col-md-4 mb-0 testimonial-item">
-            <div className="row justify-content-center">
-              <Card className='col-md-4 m-4' style={{ width: '18rem', backgroundImage: 'transperant' }}>
-                <Card.Img className='card-img' variant="top" src={mahindra} />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                  </Card.Text>
-                  {/* <Button variant="primary">Go somewhere</Button> */}
-                </Card.Body>
-              </Card>
+              <div className="row justify-content-center">
+                <Card className='col-md-4 m-4 testomonials-card' >
+                  <Card.Img className='card-img' variant="top" src={mahindra} />
+                  <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Text>
+                      Some quick example text to build on the card title and make up the
+                      bulk of the card's content.
+                    </Card.Text>
+                    {/* <Button variant="primary">Go somewhere</Button> */}
+                  </Card.Body>
+                </Card>
 
-              <Card className='col-md-4 m-4' style={{ width: '18rem' }}>
-                <Card.Img className='card-img' variant="top" src={forbMarshall} />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                  </Card.Text>
-                  {/* <Button variant="primary">Go somewhere</Button> */}
-                </Card.Body>
-              </Card>
+                <Card className='col-md-4 m-4 testomonials-card'>
+                  <Card.Img className='card-img' variant="top" src={forbMarshall} />
+                  <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Text>
+                      Some quick example text to build on the card title and make up the
+                      bulk of the card's content.
+                    </Card.Text>
+                    {/* <Button variant="primary">Go somewhere</Button> */}
+                  </Card.Body>
+                </Card>
 
-              <Card className='col-md-4 m-4' style={{ width: '18rem' }}>
-                <Card.Img className='card-img' variant="top" src={force} />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                  </Card.Text>
-                  {/* <Button variant="primary">Go somewhere</Button> */}
-                </Card.Body>
-              </Card>
+                <Card className='col-md-4 m-4 testomonials-card'>
+                  <Card.Img className='card-img' variant="top" src={force} />
+                  <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Text>
+                      Some quick example text to build on the card title and make up the
+                      bulk of the card's content.
+                    </Card.Text>
+                    {/* <Button variant="primary">Go somewhere</Button> */}
+                  </Card.Body>
+                </Card>
               </div>
             </Carousel.Item>
           </Carousel>

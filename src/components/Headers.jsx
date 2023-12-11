@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import APCLogo from '../assets/APC_Logo.jpg';
+import APCLogo from '../assets/APC_Logo.png';
 import { Link } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
@@ -13,6 +13,8 @@ import { Button } from 'react-bootstrap';
 import { IoListOutline } from '@react-icons/all-files/io5/IoListOutline';
 import { FaChevronDown } from '@react-icons/all-files/fa/FaChevronDown'
 import { IoIosClose } from '@react-icons/all-files/io/IoIosClose';
+
+import {Nav, Navbar, Container, NavDropdown} from 'react-bootstrap';  
 
 
 
@@ -98,7 +100,7 @@ export default function Headers() {
     /**
      * Toggle mobile nav dropdowns
      */
-    const navDropdowns = document.querySelectorAll('.navbar .dropdown > a');
+    const navDropdowns = document.querySelectorAll('.navbar .dropdown > Link');
 
     navDropdowns.forEach(el => {
       el.addEventListener('click', function (event) {
@@ -163,11 +165,25 @@ export default function Headers() {
       aos_init();
     });
 
+
+    document.addEventListener("DOMContentLoaded", function () {
+  // Select all list items inside the navbar
+  var navbarItems = document.querySelectorAll("#navbar ul li");
+
+  // Add a click event listener to each list item
+  navbarItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+      // Remove the mobile-nav-active class from the navbar
+      document.getElementById("navbar").classList.remove("mobile-nav-active");
+    });
+  });
+});
+
   }, [isSidebarOpen]);
 
   return (
     <div>
-      <header id="header" className="header d-flex align-items-center fixed-top">
+      {/* <header id="header" className="header d-flex align-items-center fixed-top">
         <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
 
           <Link to="/" className="logo d-flex align-items-center">
@@ -176,8 +192,7 @@ export default function Headers() {
           </Link>
 
            <IoListOutline className="mobile-nav-toggle mobile-nav-show" style={{ cursor: "pointer" }}> </IoListOutline>
-          {/* <Button variant="info" className="mobile-nav-toggle mobile-nav-show" size='lg' > </Button> */}
-         <IoIosClose className=" mobile-nav-toggle mobile-nav-hide d-none" style={{ cursor: "pointer" }}> </IoIosClose>
+         <IoListOutline className=" mobile-nav-toggle mobile-nav-hide d-none" style={{ cursor: "pointer" }}> </IoListOutline>
           
           <nav id="navbar" className="navbar">
             <ul>
@@ -193,10 +208,18 @@ export default function Headers() {
               <li>
                 <Link to="/careers">Careers</Link>
               </li>
-              {/* <li><a href="" className="active">Home</a></li>
-              <li><a href="">About</a></li>
-              <li><a href="">Services</a></li> */}
-              {/* <li><a href="">Pricing</a></li> */}
+              <li className="dropdown">
+                <Link to="">
+                  <span>Products &nbsp;</span>
+                  <FaChevronDown> <i className="bi bi-chevron-up dropdown-indicator"></i> </FaChevronDown>
+                </Link>
+                <ul>
+                  <li><Link to="/">AUTOMOTIVE SECTOR </Link></li>
+                  <li><Link to="/">CAPITAL EQUIPMENT AND MACHINE MANUFACTURERS</Link></li>
+                  <li><Link to="/">ELECTRICAL/ ELECTRONIC  EQUIPMENT MANUFACTURERS</Link></li>
+                  <li><Link to="/">Company 4</Link></li>
+                </ul>
+              </li>
               <li className="dropdown">
                 <Link href="#">
                   <span>Enterprises &nbsp;</span>
@@ -205,16 +228,33 @@ export default function Headers() {
                 <ul>
                   <li><Link to="/">Company 1</Link></li>
                   <li><Link to="/">Company 2</Link></li>
-                  {/* <li><Link to="/">Company 3</Link></li>
-                  <li><Link to="/">Company 4</Link></li> */}
                 </ul>
               </li>
-              {/* <li><a href="contact.html">Contact</a></li> */}
               <li><a className="get-a-quote" href="https://business.whatsapp.com/">Get a Quote</a></li>
             </ul>
           </nav>
         </div>
-      </header>
+      </header> */}
+
+<Navbar bg="primary" expand="md">  
+    <Container>  
+      <Navbar.Brand href="#home">Navbar Brand</Navbar.Brand>  
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />  
+      <Navbar.Collapse id="basic-navbar-nav">  
+        <Nav className="me-auto">  
+          <Nav.Link href="#home">Home</Nav.Link>  
+          <Nav.Link href="#link">Link</Nav.Link>  
+          <NavDropdown title="Dropdown" id="basic-nav-dropdown">  
+            <NavDropdown.Item href="#action/3.1">Dropdown Item 1</NavDropdown.Item>  
+            <NavDropdown.Item href="#action/3.2">Dropdown Item 2</NavDropdown.Item>  
+            <NavDropdown.Item href="#action/3.3">Dropdown Item 3</NavDropdown.Item>  
+            <NavDropdown.Divider />  
+            <NavDropdown.Item href="#action/3.4">Another Item</NavDropdown.Item>  
+          </NavDropdown>  
+        </Nav>  
+      </Navbar.Collapse>  
+    </Container>  
+  </Navbar>  
 
 
 
